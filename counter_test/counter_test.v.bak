@@ -1,0 +1,17 @@
+module counter_test
+(
+input clk,
+input rst,
+output reg[6:0] segment //7 segment display
+);
+
+@always(negedge clk or negedge rst)
+begin
+	if(rst ==1'b0)
+		segment = 7d'0;
+	else
+		segment<= segment + 1'b1;
+end
+
+
+endmodule
